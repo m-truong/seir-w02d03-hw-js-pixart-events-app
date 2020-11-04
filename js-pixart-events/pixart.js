@@ -9,7 +9,7 @@ const form = document.querySelector("form");
 // Retrieve brush-element
 const brush = document.querySelector(".brush"); // needs a .class-selector
 // Create a div underneath 
-// const div = document.querySelector("");
+const body = document.querySelector("body");
 
 
 // When I click the "set Color" button
@@ -28,18 +28,16 @@ const squares = () => {
     let squareDiv; 
     for (let k = 0 ; k < 20 ; k ++) {
         squareDiv = document.createElement("div");
-        // .appendChild(squareDiv);
+        // seems like you need add the classList.add() for the style to appear
+        squareDiv.classList.add("square"); 
+        squareDiv.style.background = "red";
+        squareDiv.style.width = "40px";
+        console.log(squareDiv);
+        // appending elements to end of <body> tag
+        body.appendChild(squareDiv); 
     }
 }
-
 squares(); 
-
-
-// JS Button addsEventListener 
-// button.addEventListener("click", () => {
-
-// }); 
-
 
 
 
