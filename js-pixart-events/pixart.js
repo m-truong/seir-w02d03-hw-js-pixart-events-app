@@ -1,53 +1,27 @@
-console.log("Hello World");
-
-// Cached DOM variables
-const button = document.querySelector("set-color");
-// Retreive the input.value 
 const input = document.querySelector("input");
-// Get form DOM element
 const form = document.querySelector("form");
-// Retrieve brush-element
-const brush = document.querySelector(".brush"); // needs a .class-selector
-// Create a div underneath 
+const brush = document.querySelector(".brush"); 
 const body = document.querySelector("body");
-const recentColor = null; 
 
-// Commit 1 & 2
-// When I click the "set Color" button form.addEventListener for enter or button click
+
 form.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    // get the value of the input 
-    let userInput = input.value; 
-    // reassign the background-color using the userInput
-    brush.style.background = userInput; 
-    recentColor = userInput;
-    input.value = ""; 
+    let userInput = input.value;
+    brush.style.background = userInput;
 });
 
-// Commit 3
 const squares = () => {
-    let squareDiv; 
-    for (let k = 0 ; k < 20 ; k ++) {
+    for (let k = 0; k < 8000; k++) {
+        let squareDiv;
         squareDiv = document.createElement("div");
-        // seems like you need add the classList.add() for the style to appear
-        squareDiv.classList.add("square"); 
-
-        // adding eventListeners while creating the squares 
-        squareDiv.addEventListener("mouseover", (evt) => {
-            console.log(evt); 
-            // Need a way to modify the CSS-class background attribute 
-            // squareDiv.classList.style.background = "green";
+        squareDiv.classList.add("square");
+        squareDiv.addEventListener("mousemove", (evt) => {
             squareDiv.style.background = input.value;
-        }); 
-        // squareDiv.style.background = "red";
-        // squareDiv.style.width = "40px";
-        console.log(squareDiv);
-        // appending elements to end of <body> tag
-        body.appendChild(squareDiv); 
+        });
+        body.appendChild(squareDiv);
     }
 }
-squares(); 
 
-// Commit 4 
+squares();
 
 

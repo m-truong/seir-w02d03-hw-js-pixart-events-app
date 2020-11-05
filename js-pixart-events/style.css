@@ -6,6 +6,7 @@
   background: #1B4370;
   margin: 15px auto;
 }
+
 /* oh added the square CSS class here, this is why it appeared */
 .square {
   float: left;
@@ -28,3 +29,4 @@ h1 {
 body {
   background-image: url('ps_neutral.png');
 }
+
